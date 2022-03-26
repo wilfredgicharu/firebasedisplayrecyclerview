@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 
 class UserlistActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class UserlistActivity : AppCompatActivity() {
 
         dbref = FirebaseDatabase.getInstance().getReference("Users")
 
-        dbref.addValueEventListener(object : ValueEventListener{
+        dbref.addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
